@@ -39,6 +39,28 @@ const database = {
       name: "Contact",
     },
   ],
+  products: [
+    {
+      id: 0,
+      name: "Producto 1",
+      price: "40",
+    },
+    {
+      id: 0,
+      name: "Producto 2",
+      price: "40",
+    },
+    {
+      id: 0,
+      name: "Producto 3",
+      price: "40",
+    },
+    {
+      id: 0,
+      name: "Producto 4",
+      price: "40",
+    },
+  ],
 };
 
 app.get("/home", (req, res) => {

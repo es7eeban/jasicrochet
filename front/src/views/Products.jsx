@@ -1,11 +1,62 @@
-//import imagen from "../assets/bg.svg";
+import { useState, useEffect } from "react";
+import Card from "../components/Card";
+
 const Products = () => {
+  const [productsData, setProductsdata] = useState([{}]);
+
+  useEffect(() => {
+    fetch("http://localhost:3002/home")
+      .then((response) => response.json())
+      .then((response) => {
+        setProductsdata(response);
+      });
+  }, []);
   return (
-    <div>
-      Products
-      {/* <img src={imagen} alt="" className="min-w-full " /> */}
+    <div className="p-5">
+      <h2 className="text-3xl font-bold text-white">Products</h2>
+
+      <div>
+        {typeof productsData.products === "undefined" ? (
+          <p>Loading...</p>
+        ) : (
+          productsData.products.map((product, i) => (
+            <div key={i}>
+              <Card name={product.name} price={product.price} />
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 };
 
 export default Products;
+
+/*{ <table>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Ver</th>
+            </tr>
+          </thead>
+          <tbody>
+            {typeof productsData.products === "undefined" ? (
+              <p>Loading...</p>
+            ) : (
+              productsData.products.map((product, i) => (
+                <tr key={i} className="">
+                  <td>{product.id}</td>
+                  <td>{product.name}</td>
+                  <td>{product.price}</td>
+                  <td>
+                    <button className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                      ver
+                    </button>
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table> }*/
