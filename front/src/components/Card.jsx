@@ -1,13 +1,16 @@
-const Card = (name, price) => {
+import { PropTypes } from "prop-types";
+import imagen from "../assets/producto1.svg";
+const Card = (props) => {
   return (
     <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-500 dark:border-gray-700">
       <a href="#">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {name}
+          {props.name}
         </h5>
       </a>
+      <img src={imagen} alt="" srcSet="" />
       <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        {price}
+        {props.price}
       </p>
       <a
         href="#"
@@ -32,6 +35,11 @@ const Card = (name, price) => {
       </a>
     </div>
   );
+};
+
+Card.propTypes = {
+  name: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
 };
 
 export default Card;

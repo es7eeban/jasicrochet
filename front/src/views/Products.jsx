@@ -12,10 +12,10 @@ const Products = () => {
       });
   }, []);
   return (
-    <div className="p-5">
-      <h2 className="text-3xl font-bold text-white">Products</h2>
+    <div className="m-5">
+      <h2 className="text-3xl font-bold text-white">Productos</h2>
 
-      <div>
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {typeof productsData.products === "undefined" ? (
           <p>Loading...</p>
         ) : (
