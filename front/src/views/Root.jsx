@@ -14,7 +14,7 @@ const Root = () => {
   }, []);
   return (
     <div>
-      <div className="flex items-center justify-between p-12 h-28 bg-white-10">
+      <div className="flex items-center justify-between w-full p-12 bg-white h-28 ">
         <img src={jasicrochet} alt="" srcSet="" className="w-20" />
         <div id="sidebar">
           <nav>
@@ -41,8 +41,9 @@ const Root = () => {
           {fecha.toLocaleDateString()}
         </span>
       </div>
-
-      <Outlet />
+      <div className="mt-12 ">
+        <Outlet />
+      </div>
     </div>
   );
 };
