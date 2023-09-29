@@ -67,6 +67,15 @@ app.get("/home", (req, res) => {
   res.json(database);
 });
 
+app.get("/products", (req, res) => {
+  res.json(database.products);
+});
+
+app.get("/products/:id", (req, res) => {
+  res.json(database.products);
+  console.log(database.products[id]);
+});
+
 app.listen(3002, () => {
   console.log("app is running on port 3002");
 });

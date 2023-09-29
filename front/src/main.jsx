@@ -6,6 +6,7 @@ import Root from "./views/Root.jsx";
 import Home from "./views/Home.jsx";
 import { Contact } from "./views/Contact";
 import Products from "./views/Products";
+import Detail from "./views/Detail";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <Products />,
+      },
+      {
+        path: "/products/:id",
+        element: <Detail />,
       },
       {
         path: "/contact",
