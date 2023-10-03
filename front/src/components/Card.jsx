@@ -1,8 +1,8 @@
 import { PropTypes } from "prop-types";
 import imagen from "../assets/producto1.svg";
 import { Link } from "react-router-dom";
-//import Detail from "../views/Detail";
 const Card = (props) => {
+  const idd = props.id;
   return (
     <div className="flex flex-col items-center justify-center max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow ">
       <a href="#">
@@ -15,11 +15,9 @@ const Card = (props) => {
         {props.price}
       </p>
       <Link
-        to={{ pathname: `/products/${props.id}` }}
-        //to={<Detail id={props.id} />}
+        to={`/products/${idd}`}
         className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
-        {}
         <svg
           className="w-3.5 h-3.5 ml-2"
           aria-hidden="true"

@@ -73,7 +73,7 @@ app.get("/products", (req, res) => {
 
 app.get("/products/:id", (req, res) => {
   res.json(database.products);
-  console.log(database.products[id]);
+  console.log("base" + database.products);
 });
 
 app.listen(3002, () => {
