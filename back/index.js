@@ -69,11 +69,17 @@ app.get("/home", (req, res) => {
 
 app.get("/products", (req, res) => {
   res.json(database.products);
+  console.log(database.products);
 });
 
 app.get("/products/:id", (req, res) => {
-  res.json(database.products);
-  console.log("base" + database.products);
+  const { id } = parseInt(req.params.id);
+  console.log(req.params);
+  console.log(id);
+  //var prueba = database.products.find(id);
+  //res.json(database.products);
+  //console.log("base" + database.products);
+  //console.log(prueba);
 });
 
 app.listen(3002, () => {

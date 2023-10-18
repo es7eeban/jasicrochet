@@ -1,64 +1,34 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import imagen from "../assets/producto1.svg";
 const Detail = () => {
   const [productsData, setProductsdata] = useState([{}]);
-  const { id } = useParams();
-  //let id = props.state.id;
+  const { id } = useParams(); //usamos el parametro de la url .../:id
   useEffect(() => {
-    fetch("http://localhost:3002/products/")
+    fetch("http://localhost:3002/products/:id")
       .then((response) => response.json())
       .then((response) => {
         setProductsdata(response);
+        console.log(response);
       });
   }, []);
 
-  let arr = {};
+  var arr = productsData.filter((product) => product.id == id);
+  /**para ver que trae product data en el filtro
+   * console.log(arr);
+   */
+
   return (
-    <>
-      <h2>detail</h2>
-      {console.log("  -------" + id)}
-      {productsData.filter((product) => {
-        product.id == id ? (arr = product) : console.log("error");
-      })}
-      <h1>{arr.id}</h1>
-      <h2>{arr.name}</h2>
-    </>
+    <div className="flex flex-col">
+      {arr.map((product) => (
+        <div key={product.id} className="flex flex-col items-center gap-5">
+          <h1 className="text-3xl">{product.name}</h1>
+          <img src={imagen} alt="" srcSet="" className="h-48" />
+          <p className="text-xl text-green-600">${product.price}</p>
+        </div>
+      ))}
+    </div>
   );
 };
-//algo hay que cambiar aca arriba
 
 export default Detail;
-
-/**
- *.map((product) => {
-          product.id == id ? (
-            <div key={product.id}>
-              <h1>{product.name}</h1>
-            </div>
-          ) : (
-            <h1>Error</h1>
-          );
-          {
-            console.log("return " + product.id);
-          }
-        })
-        
-        {productsData.id == id ? (
-        <div key={productsData.id}>
-          <h1>{productsData.name}</h1>
-        </div>
-      ) : (
-        <h1>Error</h1>
-      )}
-
-
-      .map((product) => {
-          product.id == id ? (
-            <div key={productsData.id}>
-              <h1>{productsData.name}</h1>
-            </div>
-          ) : (
-            <h1>Error</h1>
-          );
-        })
- */
