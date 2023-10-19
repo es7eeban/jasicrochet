@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
-import imagen from "../assets/producto1.svg";
 import { Link } from "react-router-dom";
+import imagen from "../assets/producto1.svg";
 const Card = (props) => {
   const idd = props.id;
   return (

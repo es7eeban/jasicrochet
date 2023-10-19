@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import imagen from "../assets/producto1.svg";
 import Loading from "../components/Loading";
+
 const Detail = () => {
   const { id } = useParams(); //usamos el parametro de la url .../:id
-  const [isLoading, setIsLoading] = useState(true);
-  const [productsData, setProductsdata] = useState([{}]);
+  const [isLoading, setIsLoading] = useState(true); //elemento para
+  const [productsData, setProductsdata] = useState([]);
 
   useEffect(() => {
     isLoading
