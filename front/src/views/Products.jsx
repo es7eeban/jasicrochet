@@ -1,17 +1,21 @@
 import { useState, useEffect } from "react";
-import Card from "../components/Card";
+import Listcard from "../components/Listcards";
 import Loading from "../components/Loading";
 
 const Products = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [productsData, setProductsdata] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3002/products")
-      .then((response) => response.json())
-      .then((response) => {
-        setProductsdata(response);
-      });
-  }, []);
+    isLoading
+      ? fetch("http://localhost:3002/products")
+          .then((response) => response.json())
+          .then((response) => {
+            setProductsdata(response);
+            setIsLoading(false);
+          })
+      : console.log("fin carga");
+  });
 
   //const [busqueda, setBusqueda] = useState();
   //let filtrado = [];
@@ -19,11 +23,6 @@ const Products = () => {
   //  filtrado = productsData;
   //}
 
-  const listcards = productsData.map((product) => (
-    <div key={product.id}>
-      <Card id={product.id} name={product.name} price={product.price} />
-    </div>
-  ));
   return (
     <>
       <div className="flex flex-col items-center m-5">
@@ -42,7 +41,7 @@ const Products = () => {
         </div>
 
         <div className="grid grid-cols-2 gap-10 mt-5 md:grid-cols-4">
-          {typeof productsData === "undefined" ? <Loading /> : listcards}
+          {isLoading ? <Loading /> : <Listcard productsData={productsData} />}
         </div>
       </div>
     </>
