@@ -18,6 +18,7 @@ const Card = (props) => {
         to={`/products/${idd}`}
         className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
+        Ver
         <svg
           className="w-3.5 h-3.5 ml-2"
           aria-hidden="true"
@@ -39,9 +40,9 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-  id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  id: PropTypes.number,
+  name: PropTypes.string,
+  price: PropTypes.string,
 };
 
 export default Card;

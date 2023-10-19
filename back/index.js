@@ -73,12 +73,16 @@ app.get("/products", (req, res) => {
 });
 
 app.get("/products/:id", (req, res) => {
-  const { id } = parseInt(req.params.id);
-  console.log(req.params);
-  console.log(id);
-  //var prueba = database.products.find(id);
-  //res.json(database.products);
-  //console.log("base" + database.products);
+  const idParam = parseInt(req.params.id);
+  var productoItem = database.products.filter(
+    (product) => product.id == idParam
+  );
+  res.json(productoItem);
+  //var prueba = database.products.find();
+  //console.log(prueba);
+  //res.json(prueba);
+
+  //console.log("base" + database.products.id === idParam);
   //console.log(prueba);
 });
 
