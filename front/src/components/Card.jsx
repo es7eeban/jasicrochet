@@ -1,8 +1,9 @@
 import { PropTypes } from "prop-types";
 import { Link } from "react-router-dom";
 import imagen from "../assets/producto1.svg";
+
 const Card = (props) => {
-  const idd = props.id;
+  const id = props.id;
   return (
     <div className="flex flex-col items-center justify-center max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow ">
       <a href="#">
@@ -15,7 +16,7 @@ const Card = (props) => {
         {props.price}
       </p>
       <Link
-        to={`/products/${idd}`}
+        to={`/products/${id}`}
         className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
         Ver
