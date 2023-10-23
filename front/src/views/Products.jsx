@@ -5,6 +5,7 @@ import Loading from "../components/Loading";
 const Products = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [productsData, setProductsdata] = useState([]);
+  const [busqueda, setBusqueda] = useState();
 
   useEffect(() => {
     isLoading
@@ -17,11 +18,16 @@ const Products = () => {
       : console.log("fin carga");
   });
 
-  //const [busqueda, setBusqueda] = useState();
-  //let filtrado = [];
-  //if (!busqueda) {
-  //  filtrado = productsData;
-  //}
+  var productsFilter = [];
+  if (!busqueda) {
+    productsFilter = productsData;
+  } else {
+    productsData.filter((product) => {
+      if (product.name.toUpperCase().includes(busqueda.toUpperCase())) {
+        return productsFilter.push(product);
+      }
+    });
+  }
 
   return (
     <>
@@ -37,13 +43,13 @@ const Products = () => {
               id="search"
               className="block w-full p-4 pl-10 mt-6 text-sm text-gray-900 bg-white border border-white rounded-lg focus:ring-white focus:border-blue-500 dark:bg-white dark:border-white dark:white dark:text-black dark:focus:ring-white dark:focus:border-white"
               placeholder="Buscar"
-              //onChange={(e) => {
-              //  setBusqueda(e.target.value);
-              // }}
+              onChange={(e) => {
+                setBusqueda(e.target.value);
+              }}
               required
             />
             <div className="grid grid-cols-2 gap-10 mt-5 md:grid-cols-4">
-              <Listcard productsData={productsData} />
+              <Listcard productsData={productsFilter} />
             </div>
           </>
         )}
