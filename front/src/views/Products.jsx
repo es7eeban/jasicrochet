@@ -18,7 +18,7 @@ const Products = () => {
       : console.log("fin carga");
   });
 
-  var productsFilter = [];
+  var productsFilter = []; //array para guardar las coincidencias del filtro
   if (!busqueda) {
     productsFilter = productsData;
   } else {
