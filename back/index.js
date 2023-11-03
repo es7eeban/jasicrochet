@@ -1,37 +1,26 @@
-const express = require("express");
+var express = require("express");
 var cors = require("cors");
-const app = express();
-var database = require("../back/database.json");
 
+/**
+ * app
+ */
+const app = express();
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-//console.log(database.users); //ver que trae el json de BDD
-
-//Get
-app.get("/", (req, res) => {
-  res.json(database.menu);
-});
+/**
+ * Importar rutas --> rutaimportada
+ */
+var products = require("./routes/products.js");
+var menu = require("./routes/menu.js");
 
 /**
- * Se obtienen todos los productos
+ * Routes
+ * .use("/ruta", rutaimportada)
  */
-app.get("/products", (req, res) => {
-  res.json(database.products);
-  console.log(database.products);
-});
-
-/**
- * Se obtienen todos los productos por id
- */
-app.get("/products/:id", (req, res) => {
-  const idParam = parseInt(req.params.id);
-  var productoItem = database.products.filter(
-    (product) => product.id == idParam
-  );
-  res.json(productoItem);
-});
+app.use("/", menu);
+app.use("/products", products);
 
 /**
  * Puerto en el que corre el backend
