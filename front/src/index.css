@@ -16,6 +16,5 @@ html {
 body {
   width: 100%; /*el ancho se ajusta a toda la ventana*/
   min-height: 100vh; /*el body se ajusta al 100% de la ventana(pantalla completa)*/
-  background-image: url("./assets/bg.svg");
-  background-size: cover;
+  background-color: rgb(254 202 202);
 }
