@@ -15,7 +15,7 @@ const Navbar = () => {
   }, []);
   return (
     <nav className="fixed flex items-center justify-between w-full h-24 p-12 m-0 bg-white ">
-      <Link to="/home">
+      <Link to="/">
         <img src={jasicrochet} alt="" srcSet="" className="w-20" />
       </Link>
       <ul className="flex gap-5">
