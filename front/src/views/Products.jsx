@@ -32,7 +32,7 @@ const Products = () => {
   return (
     <>
       <div className="flex flex-col items-center m-5">
-        <h2 className="text-3xl font-bold text-gray-900">Productos</h2>
+        <h2 className="text-3xl font-bold text-violet-900">Productos</h2>
 
         {isLoading ? (
           <Loading />
@@ -41,14 +41,14 @@ const Products = () => {
             <input
               type="search"
               id="search"
-              className="block w-full p-4 pl-10 mt-6 text-sm text-gray-400 bg-white border border-white rounded-lg focus:ring-white focus:border-blue-500 dark:bg-white dark:border-white dark:white dark:text-black dark:focus:ring-white dark:focus:border-white"
+              className="block w-6/12 p-4 pl-10 mt-6 text-sm bg-white border border-white rounded-lg outline-none text-violet-900 focus:ring-violet-900 focus:border-violet-500 "
               placeholder="Buscar"
               onChange={(e) => {
                 setBusqueda(e.target.value);
               }}
               required
             />
-            <div className="grid grid-cols-2 gap-5 m-3 md:grid-cols-4">
+            <div className="flex flex-wrap justify-center gap-5 mt-5">
               <Listcard productsData={productsFilter} />
             </div>
           </>

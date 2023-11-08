@@ -7,18 +7,25 @@ const ButtonCard = (props) => {
   const id = props.id;
   const active = props.active;
   return (
-    <Link
-      to={`/products/${id}`}
-      className={
-        active == 1
-          ? "px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          : "pointer-events-none px-3 py-2 text-sm font-medium text-center text-white bg-blue-300 rounded-lg hover:bg-blue-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-300 dark:hover:bg-blue-300 dark:focus:ring-blue-300"
-      }
-    >
-      <span className="mr-1">
-        {active == 1 ? "Disponible" : "No disponible"}
-      </span>
-      <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
+    <Link to={`/products/${id}`}>
+      {active == 1 ? (
+        <button
+          type="button"
+          className="px-3 py-2 text-sm font-medium text-center text-white rounded-lg outline-none bg-violet-700 hover:bg-violet-800 focus:outline-none "
+        >
+          <span className="mr-1">Disponible</span>
+          <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
+        </button>
+      ) : (
+        <button
+          type="button"
+          className="px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-violet-700 hover:bg-violet-800 disabled:opacity-40"
+          disabled
+        >
+          <span className="mr-1">No Disponible</span>
+          <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
+        </button>
+      )}
     </Link>
   );
 };
