@@ -9,7 +9,7 @@ const Products = () => {
 
   useEffect(() => {
     isLoading
-      ? fetch("http://localhost:3002/products")
+      ? fetch("http://localhost:3002/productos")
           .then((response) => response.json())
           .then((response) => {
             setProductsdata(response);
@@ -32,7 +32,9 @@ const Products = () => {
   return (
     <>
       <div className="flex flex-col items-center m-5">
-        <h2 className="text-3xl font-bold text-violet-900">Productos</h2>
+        <h2 className="text-3xl font-bold text-violet-900">
+          Lista de Productos
+        </h2>
 
         {isLoading ? (
           <Loading />
@@ -41,7 +43,7 @@ const Products = () => {
             <input
               type="search"
               id="search"
-              className="block w-6/12 p-4 pl-10 mt-6 text-sm bg-white border border-white rounded-lg outline-none text-violet-900 focus:ring-violet-900 focus:border-violet-500 "
+              className="block w-6/12 p-4 pl-10 mt-6 text-sm bg-white border rounded-lg outline-none border-violet-600 text-violet-900 focus:ring-violet-900 focus:border-violet-500 "
               placeholder="Buscar"
               onChange={(e) => {
                 setBusqueda(e.target.value);

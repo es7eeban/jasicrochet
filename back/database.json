@@ -2,11 +2,11 @@
   "menu": [
     {
       "id": 1,
-      "name": "Products"
+      "name": "Productos"
     },
     {
       "id": 2,
-      "name": "Contact"
+      "name": "Contacto"
     }
   ],
   "products": [
@@ -14,7 +14,7 @@
       "id": 0,
       "name": "producto 1",
       "price": "40",
-      "detail": "Porducto de lana, rojo",
+      "detail": "Producto de lana, verde, con pintas azules",
       "stock": 1,
       "active": 1
     },
@@ -22,7 +22,7 @@
       "id": 1,
       "name": "producto 2",
       "price": "40",
-      "detail": "Porducto de lana, rojo",
+      "detail": "Producto de lana, lilo de stich",
       "stock": 1,
       "active": 1
     },
@@ -30,7 +30,7 @@
       "id": 2,
       "name": "producto 3",
       "price": "40",
-      "detail": "Porducto de lana, rojo",
+      "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate laborum, consequatur veniam eveniet odio consectetur iste ex neque explicabo fuga doloremque. Excepturi, officiis aperiam? Impedit ducimus qui accusantium rerum laborum!",
       "stock": 1,
       "active": 1
     },
@@ -38,7 +38,7 @@
       "id": 3,
       "name": "producto 4",
       "price": "40",
-      "detail": "Porducto de lana, rojo",
+      "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate laborum, consequatur veniam eveniet odio consectetur iste ex neque explicabo fuga doloremque. Excepturi, officiis aperiam? Impedit ducimus qui accusantium rerum laborum!",
       "stock": 1,
       "active": 0
     },
@@ -46,7 +46,7 @@
       "id": 4,
       "name": "producto 5",
       "price": "40",
-      "detail": "Porducto de lana, rojo",
+      "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate laborum, consequatur veniam eveniet odio consectetur iste ex neque explicabo fuga doloremque. Excepturi, officiis aperiam? Impedit ducimus qui accusantium rerum laborum!",
       "stock": 1,
       "active": 1
     },
@@ -54,7 +54,7 @@
       "id": 5,
       "name": "producto 6",
       "price": "4.000",
-      "detail": "Porducto de lana, rojo",
+      "detail": "Producto de lana, rojo",
       "stock": 1,
       "active": 0
     },
@@ -62,7 +62,7 @@
       "id": 6,
       "name": "producto 7",
       "price": "5.500",
-      "detail": "Porducto de lana, rojo",
+      "detail": "Producto de lana, rojo",
       "stock": 1,
       "active": 1
     },
@@ -70,7 +70,7 @@
       "id": 7,
       "name": "producto 8",
       "price": "20",
-      "detail": "Porducto de lana, rojo",
+      "detail": "Producto de lana, rojo",
       "stock": 1,
       "active": 1
     },
@@ -78,7 +78,7 @@
       "id": 8,
       "name": "producto 9",
       "price": "60",
-      "detail": "Porducto de lana, rojo",
+      "detail": "Producto de lana, rojo",
       "stock": 1,
       "active": 0
     }

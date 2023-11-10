@@ -7,7 +7,7 @@ const ButtonCard = (props) => {
   const id = props.id;
   const active = props.active;
   return (
-    <Link to={`/products/${id}`}>
+    <Link to={`/productos/${id}`}>
       {active == 1 ? (
         <button
           type="button"

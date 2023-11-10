@@ -6,19 +6,22 @@ const Card = (props) => {
   const active = props.active;
 
   return (
-    <div className="flex flex-col items-center justify-center max-w-sm gap-2 p-6">
-      <h5 className="text-xl font-bold tracking-tight text-gray-900 capitalize dark:text-gray-900">
-        {props.name}
-      </h5>
-
+    <div className="flex flex-col justify-center max-w-sm gap-3 p-6">
       <img
         src={imagen}
         alt={props.name}
         className="w-full rounded-b-none rounded-xl"
       />
-      <p className="text-lg font-semibold text-gray-700 ">${props.price}</p>
-      <p>{props.detail}</p>
-      <ButtonCard id={id} active={active} />
+      <div className="flex justify-between w-full gap-5 px-5">
+        <h5 className="text-xl font-semibold text-gray-900 uppercase ">
+          {props.name}
+        </h5>
+        <p className="text-xl font-medium text-gray-600 ">${props.price}</p>
+      </div>
+      <p className="w-full px-5 text-base text-justify">{props.detail}</p>
+      <div className="flex justify-center w-full mt-3">
+        <ButtonCard id={id} active={active} />
+      </div>
     </div>
   );
 };

@@ -20,7 +20,7 @@ var menu = require("./routes/menu.js");
  * .use("/ruta", rutaimportada)
  */
 app.use("/", menu);
-app.use("/products", products);
+app.use("/productos", products);
 
 /**
  * Puerto en el que corre el backend
