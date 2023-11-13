@@ -22,3 +22,31 @@ body {
 .active{
   @apply font-bold text-violet-900;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #b8b8b8;
+  
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(124,58,237);
+  border: solid, 1, violet;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(76,29,149);
+}

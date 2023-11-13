@@ -43,14 +43,14 @@ const Products = () => {
             <input
               type="search"
               id="search"
-              className="block w-6/12 p-4 pl-10 mt-6 text-sm bg-white border rounded-lg outline-none border-violet-600 text-violet-900 focus:ring-violet-900 focus:border-violet-500 "
+              className="block w-6/12 p-4 pl-10 mt-6 text-sm font-semibold leading-8 tracking-wide bg-white border rounded-lg outline-none border-violet-300 text-violet-900 focus:ring-violet-900 focus:border-violet-500 "
               placeholder="Buscar"
               onChange={(e) => {
                 setBusqueda(e.target.value);
               }}
               required
             />
-            <div className="flex flex-wrap justify-center gap-5 mt-5">
+            <div className="flex flex-wrap justify-center gap-5 mt-7">
               <Listcard productsData={productsFilter} />
             </div>
           </>
