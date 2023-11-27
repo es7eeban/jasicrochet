@@ -14,6 +14,7 @@ app.use(express.json());
  */
 var products = require("./routes/products.js");
 var menu = require("./routes/menu.js");
+var login = require("./routes/login.js");
 
 /**
  * Routes
@@ -21,6 +22,8 @@ var menu = require("./routes/menu.js");
  */
 app.use("/", menu);
 app.use("/productos", products);
+
+app.use("/login", login);
 
 /**
  * Puerto en el que corre el backend

@@ -19,6 +19,12 @@ body {
   @apply bg-violet-50
 }
 
+.bg-home{
+  background-image: url('../src/assets/bg.svg');
+  background-size: cover;
+  
+}
+
 .active{
   @apply font-bold text-violet-900;
 }
